@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/elfking-laptop/Development/Clifin/out/build/g++ x86",
+  "command": "/usr/bin/g++  -I/home/elfking-laptop/Development/Clifin/include -g -o CMakeFiles/Clifin.dir/main.cpp.o -c /home/elfking-laptop/Development/Clifin/main.cpp",
+  "file": "/home/elfking-laptop/Development/Clifin/main.cpp",
+  "output": "CMakeFiles/Clifin.dir/main.cpp.o"
+},
+{
+  "directory": "/home/elfking-laptop/Development/Clifin/out/build/g++ x86",
+  "command": "/usr/bin/g++  -I/home/elfking-laptop/Development/Clifin/include -g -o CMakeFiles/Clifin.dir/src/network.cpp.o -c /home/elfking-laptop/Development/Clifin/src/network.cpp",
+  "file": "/home/elfking-laptop/Development/Clifin/src/network.cpp",
+  "output": "CMakeFiles/Clifin.dir/src/network.cpp.o"
+},
+{
+  "directory": "/home/elfking-laptop/Development/Clifin/out/build/g++ x86",
+  "command": "/usr/bin/g++  -I/home/elfking-laptop/Development/Clifin/include -g -o CMakeFiles/Clifin.dir/src/secrets.cpp.o -c /home/elfking-laptop/Development/Clifin/src/secrets.cpp",
+  "file": "/home/elfking-laptop/Development/Clifin/src/secrets.cpp",
+  "output": "CMakeFiles/Clifin.dir/src/secrets.cpp.o"
+}
+]

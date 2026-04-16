@@ -1,0 +1,3 @@
+/home/elfking-laptop/Development/Clifin/CMakeFiles/Clifin.dir
+/home/elfking-laptop/Development/Clifin/CMakeFiles/edit_cache.dir
+/home/elfking-laptop/Development/Clifin/CMakeFiles/rebuild_cache.dir

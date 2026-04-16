@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/elfking-laptop/Development/Clifin/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Clifin.dir/main.cpp.o -c /home/elfking-laptop/Development/Clifin/main.cpp",
+  "file": "/home/elfking-laptop/Development/Clifin/main.cpp",
+  "output": "CMakeFiles/Clifin.dir/main.cpp.o"
+}
+]

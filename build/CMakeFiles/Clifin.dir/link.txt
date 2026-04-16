@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Clifin.dir/main.cpp.o -o Clifin 

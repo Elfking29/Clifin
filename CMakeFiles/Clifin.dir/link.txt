@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Clifin.dir/main.cpp.o CMakeFiles/Clifin.dir/src/network.cpp.o CMakeFiles/Clifin.dir/src/secrets.cpp.o -o Clifin 
