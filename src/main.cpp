@@ -1,6 +1,9 @@
+#include <print>
 #include <iostream>
 
+#include "network.h"
+
 int main() {
-    std::cout << "Hello GitHub\n";
+    Network n("https://mediaserver.derekramsey.com","Avery","ace293562222329");
     return 0;
 }
