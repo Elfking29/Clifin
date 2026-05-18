@@ -2,6 +2,8 @@
 #define NETWORK_H
 
 #include <string>
+#include <vector>
+#include "models.h"
 
 class Network {
     private:
@@ -20,6 +22,8 @@ class Network {
 
     public:
         Network(std::string url, std::string us, std::string pw);
+        std::vector<Item> getLibraries();
+        std::vector<Item> getAlbums(std::string id);
 
 };
 

@@ -1,5 +1,7 @@
 #include "network.h"
 #include "cpr/cpr.h"
+#include "models.h"
+#include <cpr/parameters.h>
 #include <nlohmann/json.hpp>
 #include <string>
 
@@ -30,7 +32,7 @@ Network::Network(std::string url, std::string user, std::string pass){
     body["Pw"]=pass;
 
     cpr::Response r = cpr::Post(
-        cpr::Url{url.append("/Users/AuthenticateByName")},
+        cpr::Url{url+"/Users/AuthenticateByName"},
         cpr::Header{
             {"Content-Type", "application/json"},
             {"Accept","application/json"},
@@ -40,4 +42,47 @@ Network::Network(std::string url, std::string user, std::string pass){
     );
     
     this->setHeader(header+", Token=\""+nlohmann::json::parse(r.text)["AccessToken"].get<std::string>()+"\"");
+}
+
+std::vector<Item> Network::getLibraries(){
+    cpr::Response r = cpr::Get(
+        cpr::Url{url+"/UserViews"},
+        cpr::Header{{"Authorization",this->getHeader()}},
+        cpr::Parameters{
+            {"presetViews","music"}
+        }
+    );
+
+    nlohmann::json res = nlohmann::json::parse(r.text);
+
+    
+    std::vector<Item> items;
+    for (int i=0; i<res["Items"].size(); i++){
+        if (res["Items"][i]["CollectionType"].dump()=="\"music\""){
+            items.push_back({res["Items"][i]["Name"].get<std::string>(),res["Items"][i]["Id"].get<std::string>()});
+        }
+    }
+
+    return items;
+}
+
+std::vector<Item> Network::getAlbums(std::string id){
+    cpr::Response r = cpr::Get(
+        cpr::Url{url+"/Items"},
+        cpr::Header{{"Authorization",this->getHeader()}},
+        cpr::Parameters{
+            {"IncludeItemTypes","MusicAlbum"},
+            {"Recursive","true"},
+            {"ParentId",id}
+        }
+    );
+
+    nlohmann::json res = nlohmann::json::parse(r.text);
+
+    std::vector<Item> items;
+    for (int i=0; i<res["Items"].size(); i++){
+        items.push_back({res["Items"][i]["Name"].get<std::string>(),res["Items"][i]["Id"].get<std::string>()});
+    }
+
+    return items;
 }
