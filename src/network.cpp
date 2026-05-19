@@ -58,7 +58,7 @@ std::vector<Item> Network::getLibraries(){
     
     std::vector<Item> items;
     for (int i=0; i<res["Items"].size(); i++){
-        if (res["Items"][i]["CollectionType"].dump()=="\"music\""){
+        if (res["Items"][i]["CollectionType"].dump()=="\"music\""){//} || res["Items"][i]["CollectionType"].dump()=="\"playlists\""){
             items.push_back({res["Items"][i]["Name"].get<std::string>(),res["Items"][i]["Id"].get<std::string>()});
         }
     }
@@ -81,7 +81,7 @@ std::vector<Item> Network::getAlbums(std::string id){
 
     std::vector<Item> items;
     for (int i=0; i<res["Items"].size(); i++){
-        items.push_back({res["Items"][i]["Name"].get<std::string>(),res["Items"][i]["Id"].get<std::string>()});
+            items.push_back({res["Items"][i]["Name"].get<std::string>(),res["Items"][i]["Id"].get<std::string>()});
     }
 
     return items;

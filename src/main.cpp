@@ -1,17 +1,21 @@
 #include <print>
 #include <iostream>
-#include <vector>
 #include <string>
+#include <csignal>
+#include <unistd.h>
 
 #include "network.h"
+#include "ui.h"
 #include "models.h"
 
 int main() {
-    Network n("https://mediaserver.derekramsey.com","Avery","ace293562222329");
-    std::vector<Item> v = n.getLibraries();
-    std::vector<Item> j = n.getAlbums(v.front().id);
-    for (Item i : j){
-        std::print("{} - {}\n",i.name,i.id);
-    }
+    //Set up terminal resizing
+    struct sigaction sa{};
+    sa.sa_handler = on_winch;
+    sigaction(SIGWINCH, &sa, nullptr);
+
+    UI ui;
+    ui.print("In the beginning was the word",0,4);
+
     return 0;
 }
