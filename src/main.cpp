@@ -10,12 +10,9 @@
 
 int main() {
     //Set up terminal resizing
-    struct sigaction sa{};
-    sa.sa_handler = on_winch;
-    sigaction(SIGWINCH, &sa, nullptr);
 
     UI ui;
-    ui.print("In the beginning was the word",0,4);
+    ui.auth_window();
 
     return 0;
 }

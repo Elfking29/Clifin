@@ -3,27 +3,20 @@
 
 #include <string>
 #include <vector>
+#include <array>
 #include "models.h"
-
-extern "C" void on_winch(int);
 
 class UI {
     private:
-        int rows=24;
-        int cols=80;
-
-        void clear_screen();
-        void move(int row, int col);
-        void home();
-        void back_update();
-
-
+        int rows;
+        int cols;
+        void update_size();
+        void printc(std::string str, int row);
 
     public:
         UI();
-        void update();
-        void print_center(std::string text, int line);
-        void print(std::string text, int row, int col);
+        std::array<std::string,3> auth_window();
+
         
 
 };

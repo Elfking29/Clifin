@@ -16,7 +16,9 @@ target_include_directories(clifin PRIVATE include)
 
 find_package(cpr CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
+find_package(Curses REQUIRED)
 target_link_libraries(clifin PRIVATE
     cpr::cpr
     nlohmann_json::nlohmann_json
+    ${CURSES_LIBRARIES}
     )
